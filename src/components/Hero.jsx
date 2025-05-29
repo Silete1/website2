@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { styles } from '../styles';
+import { styles } from '../styles'; // Assuming styles are imported correctly
 import { InteractiveLetters } from "./other/InteractiveLetters";
 import odooPartnerLogo from '../assets/odoo-logo-with-partner.png'; // Assuming direct import
 
@@ -74,10 +74,11 @@ const Hero = () => {
 
           <div className="flex flex-col items-center w-full">
             {/* Block 1: "Simplify" + Rotating Text */}
-            <div className="my-2 md:my-3 flex flex-col items-center"> 
+            <div className="my-2 md:my-3 flex flex-col items-center">
               <InteractiveLetters
                 text="Simplify"
-                className={`flex flex-wrap justify-center text-6xl xxs:text-7xl xs:text-8xl sm:text-9xl md:text-[100px] lg:text-[120px] font-extrabold ${styles.heroHeadText || ''} text-eerieBlack leading-tight mb-1 md:mb-2`}
+                // MODIFIED className HERE
+                className={`flex flex-wrap justify-center text-6xl xxs:text-7xl xs:text-8xl sm:text-9xl md:text-[100px] lg:text-[120px] font-extrabold ${styles.heroHeadText || ''} leading-tight mb-1 md:mb-2`}
                 maxDistance={600}
                 maxTranslate={200}
               />
@@ -99,17 +100,7 @@ const Hero = () => {
             </div>
 
             {/* Block 2: Subtext, CTA, and Odoo Partner Logo */}
-            {/* === ADJUST TOP MARGIN HERE TO CONTROL GAP === */}
-            {/* Previously: className="mt-4 md:mt-6 flex flex-col items-center" */}
-            {/* Now reduced: e.g., mt-2 md:mt-3 or adjust as needed */}
-            <div className="mt-2 md:mt-3 flex flex-col items-center"> 
-            {/* You can change mt-2 (0.5rem) and md:mt-3 (0.75rem) to smaller values like mt-1, md:mt-2, or even remove them if other elements provide enough space.
-                Or, you can adjust the bottom margin of the block above (`my-2 md:my-3` on the "Simplify" block)
-                by changing `my-` (top and bottom margin) to `mt-` (top only) and a smaller `mb-` (bottom margin).
-                For example, changing `my-2 md:my-3` on the block above to `mt-2 md:mt-3 mb-1 md:mb-1`.
-                But reducing the top margin of *this* block is often the most direct way.
-            */}
-            {/* === END ADJUSTMENT AREA === */}
+            <div className="mt-2 md:mt-3 flex flex-col items-center">
               <InteractiveLetters
                 text="Helping businesses streamline operations with customized Odoo solutions."
                 className={`text-sm xxs:text-base xs:text-lg md:text-xl ${styles.heroSubText || ''} text-taupe max-w-xl mb-6 md:mb-8`}
