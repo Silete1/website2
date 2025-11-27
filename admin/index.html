@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Decap CMS</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="cms-config-url" href="/admin/config.yml" type="text/yaml" />
+  </head>
+  <body>
+    <script>
+      (function () {
+        const host = window.location.hostname || '';
+        if (host === 'localhost' || host === '127.0.0.1') {
+          window.location.replace('/');
+        }
+      })();
+    </script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>
