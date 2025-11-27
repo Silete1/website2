@@ -4,10 +4,8 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import {
   About,
   Contact,
-  // Experience, // Remove this import
   Hero,
   Navbar,
-  // Tech, // Remove this import
   Services,
 } from './components';
 import PreLoader from './components/PreLoader';
@@ -50,7 +48,7 @@ const HomePage = () => {
         <Hero />
       </div>
 
-      <div className="bg-about bg-cover bg-center bg-no-repeat">
+      <div className="bg-white">
         <About />
       </div>
 

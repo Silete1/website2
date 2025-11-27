@@ -99,10 +99,10 @@ const Contact = () => {
           {t('contact.description')}
         </p>
         {/* UPDATED: Added contact details here */}
-        <div className="contact__info">
+        <div className={`contact__info ${isRTL ? 'text-right' : 'text-left'}`}>
           <p className="contact__info-item">
             <i className="ri-map-pin-line"></i> 
-            Iraq - Baghdad - Ali Al-Salih near the 14th of Ramdan Bridge
+            Iraq - Baghdad - Alkarradh - Arrasat
           </p>
           <p className="contact__info-item">
             <i className="ri-phone-line"></i>

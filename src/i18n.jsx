@@ -11,19 +11,37 @@ const translations = {
     },
     hero: {
       title: 'بسّط',
-      rotating: ['تطبيقاتك', 'مواقعك', 'عملياتك', 'إجراءاتك', 'تشغيلك'],
-      subtitle: 'نصمم ونبني أنظمة ويب وجوال ومتكاملة تناسب طريقة عمل نشاطك.',
+      rotating: ['تطبيقاتك', 'مواقعك', 'عملياتك', 'إجراءاتك', 'إدارتك'],
+      subtitle: 'مواقع إلكترونية وتطبيقات موبايل مخصّصة ونظام أودو ERP ضمن منظومة واحدة منسجمة، مصمَّمة لتناسب طريقة عمل شركتك فعلياً.',
       cta: 'احجز استشارة مجانية',
     },
     about: {
-      heading: 'نظرة عامة.',
+      heading: 'نظرة عامة',
       description:
-        'تصمم أنو سوفتوير سوليوشنز أنظمة ويب وجوال وERP مخصصة لتناسب طريقة عمل الشركات في العراق والمنطقة.',
+        'أنو سوفتوير سوليوشنز تطوّر برمجيات أعمال للشركات في العراق والمنطقة. نعمل على تصميم وتنفيذ مواقع إلكترونية وتطبيقات موبايل وأنظمة داخلية مخصّصة، إضافةً إلى إعداد أنظمة أودو ERP لتنظيم الحسابات والمخزون والعمليات. تركيزنا الأساسي هو فهم طريقة العمل الحقيقية داخل شركتك، ثم تحويلها إلى خطوات رقمية واضحة وثابتة يمكن للفريق الاعتماد عليها يومياً.',
     },
     services: {
-      heading: 'خدماتنا.',
+      heading: 'خدماتنا',
       intro:
         'نقدّم خدمات لتحسين عمليات الأعمال وبناء حلول مخصصة في العمارة المؤسسية، تنفيذ الـERP، الأتمتة الذكية، وتطوير التطبيقات.',
+      items: {
+        customApps: {
+          title: 'تطبيقات',
+          description: 'مواقع إلكترونية وتطبيقات موبايل حديثة مصمَّمة لتدفّقات عملك ومستخدميك.',
+        },
+        portals: {
+          title: 'الأتمتة الذكية',
+          description: 'بوابات وأنظمة حجز وتتبع وتدفّقات مؤتمتة تقلّل العمل اليدوي والأخطاء.',
+        },
+        architecture: {
+          title: 'معمارية المؤسسات',
+          description: 'نمذجة العمليات وتصميم الأنظمة باستخدام TOGAF وBPMN لبناء منظومات رقمية قابلة للتوسّع.',
+        },
+        integrations: {
+          title: 'أودو',
+          description: 'تنفيذ أودو ERP وتصميم الوحدات وربط متعمّق مع تطبيقاتك المخصّصة وبياناتك.',
+        },
+      },
     },
     blog: {
       heading: 'المدونة',
@@ -35,8 +53,8 @@ const translations = {
       resultsPlural: 'نتائج',
     },
     contact: {
-      heading: 'تواصل معنا.',
-      description: 'يسعدنا سماعك. إذا كنت مستعدًا لتطوير عملك أو لديك فكرة، فريقنا جاهز للمساعدة.',
+      heading: 'تواصل معنا',
+      description: 'يسعدنا سماعك. إذا كنت مستعدًا لتطوير عملك أو لديك فكرة، فريقنا جاهز للمساعدة',
       formTitle: 'أرسل لنا رسالة',
       name: 'الاسم',
       email: 'البريد الإلكتروني',
@@ -56,18 +74,36 @@ const translations = {
     hero: {
       title: 'Simplify',
       rotating: ['your apps', 'your websites', 'your processes', 'your workflows', 'your operations'],
-      subtitle: 'We design and build web, mobile and integrated systems that actually fit how your business works.',
+      subtitle: 'Custom web & mobile applications and Odoo ERP delivered as one coherent system — designed around how your company really works.',
       cta: 'Book a free consultation',
     },
     about: {
-      heading: 'Overview.',
+      heading: 'Overview',
       description:
-        'Anu Software Solutions designs and builds custom web, mobile and ERP systems for businesses in Iraq and the region.',
+        'Anu Software Solutions builds business software for companies in Iraq and the region. We design and deliver custom websites, mobile applications, and internal tools, and we also implement Odoo-based ERP systems to organize finance, inventory, and operations. Our focus is simple: understand how work really happens inside your company, then turn it into clear, reliable digital flows that your team can actually use every day.',
     },
     services: {
-      heading: 'Our Services.',
+      heading: 'Our Services',
       intro:
         'We provide expert services across enterprise architecture, ERP implementation, intelligent automation, and custom app development to optimize your operations.',
+      items: {
+        customApps: {
+          title: 'Applications',
+          description: 'Modern web & mobile apps tailored to your workflows and users.',
+        },
+        portals: {
+          title: 'Smart Automation',
+          description: 'Portals, booking and tracking flows, and process automation that reduce manual work and errors.',
+        },
+        architecture: {
+          title: 'Architecture',
+          description: 'Process modeling and system design using TOGAF and BPMN for scalable digital ecosystems.',
+        },
+        integrations: {
+          title: 'Odoo',
+          description: 'Odoo ERP implementation, module design, and deep integrations with your custom apps and data.',
+        },
+      },
     },
     blog: {
       heading: 'Blog',
@@ -79,8 +115,8 @@ const translations = {
       resultsPlural: 'results',
     },
     contact: {
-      heading: 'Contact Us.',
-      description: 'We’d love to hear from you. Whether you’re ready to transform your business or exploring ideas, our team is here to help.',
+      heading: 'Contact Us',
+      description: 'We’d love to hear from you. Whether you’re ready to transform your business or exploring ideas, our team is here to help',
       formTitle: 'Send Us A Message',
       name: 'Name',
       email: 'Email',

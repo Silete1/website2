@@ -13,6 +13,7 @@ const ServiceDisplayCard = ({
   name,
   description,
   image,
+  alt = '',
   index,
   active,
   handleClick,
@@ -40,6 +41,9 @@ const ServiceDisplayCard = ({
   const displayName = lang === 'ar' && translations[id]?.name ? translations[id].name : name;
   const displayDescription =
     lang === 'ar' && translations[id]?.description ? translations[id].description : description;
+  const displayAlt = lang === 'ar' && translations[id]?.name
+    ? translations[id].name
+    : (alt || displayName);
 
   return (
     <motion.div
@@ -55,21 +59,24 @@ const ServiceDisplayCard = ({
 
       <img
         src={image}
-        alt={name}
+        alt={displayAlt}
         className="absolute w-full h-full object-cover rounded-[24px]"
       />
 
       {active !== id ? (
-        <div className={`flex items-center justify-start pr-[4.5rem] ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-          <h3
-            className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
-            whitespace-nowrap sm:text-[27px] text-[18px] text-eerieBlack tracking-[1px]
+        <>
+          <div className="absolute inset-0 rounded-[24px] bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+          <div className={`flex items-center justify-start pr-[4.5rem] ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+            <h3
+              className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
+            whitespace-nowrap sm:text-[27px] text-[18px] text-white tracking-[1px]
             absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
             leading-none z-20"
-          >
-            {displayName}
-          </h3>
-        </div>
+            >
+              {displayName}
+            </h3>
+          </div>
+        </>
       ) : (
         <>
           <div
@@ -81,7 +88,7 @@ const ServiceDisplayCard = ({
               {displayName}
             </h2>
             <p
-              className={`text-eerieBlack sm:text-[14px] text-[12px] 
+            className={`text-eerieBlack sm:text-[14px] text-[12px] 
               sm:leading-[22px] leading-[18px] break-words whitespace-pre-line
               font-poppins tracking-[1px] mt-2 ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
               {displayDescription}

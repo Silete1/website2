@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { styles } from '../styles'; // Assuming styles are imported correctly
+import { styles } from '../styles';
 import { InteractiveLetters } from "./other/InteractiveLetters";
-import odooPartnerLogo from '../assets/odoo-logo-with-partner.png'; // Assuming direct import
+import odooPartnerLogo from '../assets/odoo-logo-with-partner.png';
 import { useI18n } from '../i18n.jsx';
 
 const Hero = () => {

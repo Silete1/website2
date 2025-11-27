@@ -62,22 +62,22 @@ const navLinks = [
 const aboutServices = [ // This is for your "About Us" cards
   {
     title: "About",
-    description: "Anu Software Solutions designs and builds custom web, mobile and ERP systems for businesses in Iraq and the region.",
+    description: "Anu Software Solutions is a team of engineers and analysts who speak both “process” and “code”. We build custom web and mobile applications, and we roll out Odoo ERP where a structured back-office is needed. We prefer long-term partnerships where we stay close to your operations, improve the system step by step, and keep technology serving the business, not the other way around.",
     icon: frontend,
   },
   {
     title: "Our Mission",
-    description: "To help companies move from spreadsheets and WhatsApp to robust apps, without over-engineering.",
+    description: "Our mission is to replace improvised, fragile workflows with clear digital systems — whether that means a new custom application, an Odoo ERP rollout, or a focused combination of both — while keeping things understandable for the people who use them.",
     icon: backend,
   },
   {
     title: "Our Vision",
-    description: "To be the local tech partner that can design, build and run mission-critical systems for Iraqi businesses.",
+    description: "Our vision is to become the trusted local technology partner for Iraqi businesses that want to digitize their core operations with serious, well-engineered software instead of quick fixes.",
     icon: ux,
   },
   {
     title: "Our Approach",
-    description: "We combine business analysis (BPMN, TOGAF, ArchiMate) with strong engineering in React, Next.js, Node.js and Odoo when needed.",
+    description: "We start with conversations and simple sketches of how work really moves inside your company. Then we turn that into a clear sequence of steps, define what should be automated, and decide whether it fits better as a custom application or as part of your ERP. We deliver a first usable version quickly, watch how your team uses it in real life, and improve it in short, focused iterations instead of one big risky launch.",
     icon: prototyping,
   },
 ];
@@ -88,25 +88,29 @@ const anuCompanyServices = [
     id: 'service-ea', // Unique ID for the service
     name: 'Enterprise Architecture',
     description: 'We analyze business processes using TOGAF, identify inefficiencies, and design optimized architectures tailored to each organization.',
-    image: komikult, // Placeholder image - replace with an actual relevant image
+    image: '/services/enterprise-architecture.jpg',
+    alt: 'Enterprise architecture consulting and process design',
   },
   {
     id: 'service-erp',
     name: 'Odoo Implementation',
     description: 'We deploy and customize Odoo ERP to match your workflows — including sales, accounting, inventory, HR, Project and manufacturing.',
-    image: leaderboard, // Placeholder image - replace with an actual relevant image
+    image: '/services/odoo-implementation.jpg',
+    alt: 'Odoo ERP implementation and customization',
   },
   {
     id: 'service-ia',
     name: 'Intelligent Automation',
     description: 'We automate workflows, integrate systems like GPS and WhatsApp, and train & tailor LLMs (Large Language Models) to your business needs.',
-    image: math, // Placeholder image - replace with an actual relevant image
+    image: '/services/smart-automation.jpg',
+    alt: 'Smart automation with integrations and AI',
   },
   {
     id: 'service-ca',
     name: 'Custom Apps & Dashboards', // Updated title to match previous discussion
     description: 'We build web/mobile apps and data dashboards that streamline operations and provide real-time insights.',
-    image: movie, // Placeholder image - replace with an actual relevant image
+    image: '/services/custom-apps.jpg',
+    alt: 'Custom web and mobile applications with dashboards',
   },
 ];
 
