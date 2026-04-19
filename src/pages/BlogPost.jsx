@@ -3,11 +3,13 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
 import { setPageMetadata } from '../utils/seo';
 import { getPostBySlug } from '../lib/blog';
+import { useI18n } from '../i18n.jsx';
 
 const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const post = getPostBySlug(slug);
+  const { lang } = useI18n();
 
   useEffect(() => {
     if (!post) {
@@ -15,11 +17,39 @@ const BlogPost = () => {
       return;
     }
 
-    setPageMetadata(
-      `${post.title} – Anu Software Solutions`,
-      post.excerpt || 'Article from Anu Software Solutions on building custom web and mobile apps, integrations, and ERP systems.'
-    );
-  }, [post, navigate]);
+    setPageMetadata({
+      title: `${post.title} | ANU`,
+      description:
+        post.excerpt ||
+        'Article from ANU about Odoo ERP, accounting software, integrations, and business systems in Iraq.',
+      path: `/blog/${post.slug}`,
+      type: 'article',
+      locale: lang === 'ar' ? 'ar_IQ' : 'en_US',
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description:
+          post.excerpt ||
+          'Article from ANU about Odoo ERP, accounting software, integrations, and business systems in Iraq.',
+        datePublished: post.date,
+        dateModified: post.date,
+        mainEntityOfPage: `https://www.anu.ltd/blog/${post.slug}`,
+        author: {
+          '@type': 'Organization',
+          name: 'ANU',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'ANU',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.anu.ltd/anulogopng-.png',
+          },
+        },
+      },
+    });
+  }, [lang, navigate, post]);
 
   if (!post) {
     return null;
@@ -30,7 +60,7 @@ const BlogPost = () => {
       <section className={`${styles.padding} ${styles.navPadding} max-w-4xl mx-auto pb-16`}>
         <div className="mb-6">
           <Link to="/blog" className="text-french font-semibold hover:underline">
-            ← Back to blog
+            Back to blog
           </Link>
         </div>
 

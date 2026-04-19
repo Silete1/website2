@@ -13,6 +13,7 @@ import Cursor from './components/other/Cursor';
 import Blog from './pages/Blog';
 import { setPageMetadata } from './utils/seo';
 import BlogPost from './pages/BlogPost';
+import { useI18n } from './i18n.jsx';
 
 const ScrollToHash = () => {
   const location = useLocation();
@@ -35,12 +36,58 @@ const ScrollToHash = () => {
 };
 
 const HomePage = () => {
+  const { lang } = useI18n();
+
   useEffect(() => {
-    setPageMetadata(
-      'Anu Software Solutions',
-      'Custom web and mobile apps, integrations, and ERP systems built for how your business works.'
-    );
-  }, []);
+    setPageMetadata({
+      title:
+        lang === 'ar'
+          ? 'ANU | أودو ERP وبرامج المحاسبة وإدارة الأعمال في العراق'
+          : 'ANU | Odoo ERP, Accounting Software, and Business Systems in Iraq',
+      description:
+        lang === 'ar'
+          ? 'ANU تقدم خدمات أودو ERP وبرامج المحاسبة وإدارة المخزون والموارد البشرية وأتمتة الأعمال والتطبيقات المخصصة للشركات في العراق.'
+          : 'ANU delivers Odoo ERP, accounting software, inventory, HR, automation, and custom business applications for companies in Iraq.',
+      path: '/',
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_IQ' : 'en_US',
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': 'https://www.anu.ltd/#organization',
+            name: 'ANU',
+            url: 'https://www.anu.ltd/',
+            logo: 'https://www.anu.ltd/anulogopng-.png',
+            email: 'info@anu.ltd',
+            telephone: '+9647867007030',
+          },
+          {
+            '@type': 'ProfessionalService',
+            '@id': 'https://www.anu.ltd/#service',
+            name: 'ANU',
+            url: 'https://www.anu.ltd/',
+            image: 'https://www.anu.ltd/anulogopng-.png',
+            areaServed: 'IQ',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Baghdad',
+              addressCountry: 'IQ',
+              streetAddress: 'Iraq - Baghdad - Alkarradh - Arrasat',
+            },
+            makesOffer: [
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Odoo ERP Implementation' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Accounting Software' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Inventory Management Systems' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'HR Systems' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Business Applications' } },
+            ],
+          },
+        ],
+      },
+    });
+  }, [lang]);
 
   return (
     <div className="relative z-0">

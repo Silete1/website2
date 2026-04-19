@@ -12,11 +12,20 @@ const Blog = () => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    setPageMetadata(
-      'Blog – Anu Software Solutions',
-      'Articles on custom web and mobile apps, integrations, ERP, and digital transformation for businesses in Iraq and the region.'
-    );
-  }, []);
+    setPageMetadata({
+      title:
+        lang === 'ar'
+          ? 'مدونة ANU | أودو ERP والتحول الرقمي للشركات في العراق'
+          : 'ANU Blog | Odoo ERP, Integration, and Digital Transformation in Iraq',
+      description:
+        lang === 'ar'
+          ? 'مقالات عن أودو ERP وبرامج المحاسبة والتكاملات والتحول الرقمي للشركات في العراق والمنطقة.'
+          : 'Articles on Odoo ERP, accounting software, integrations, and digital transformation for businesses in Iraq and the region.',
+      path: '/blog',
+      type: 'website',
+      locale: lang === 'ar' ? 'ar_IQ' : 'en_US',
+    });
+  }, [lang]);
 
   const filteredPosts = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -28,19 +37,20 @@ const Blog = () => {
     });
   }, [query]);
 
-    return (
+  return (
     <main className="bg-flashWhite min-h-screen">
       <section className={`${styles.padding} ${styles.navPadding} max-w-6xl mx-auto pb-16`}>
         <div className="text-center max-w-3xl mx-auto">
           <p className={`${styles.sectionSubText} text-center`}>{t('blog.heading')}</p>
           <h1 className={`${styles.sectionHeadText} text-center`}>{t('blog.heading')}</h1>
-          <p className="text-taupe text-[18px] leading-[30px] mt-4">
-            {t('blog.subheading')}
-          </p>
+          <p className="text-taupe text-[18px] leading-[30px] mt-4">{t('blog.subheading')}</p>
         </div>
 
         <div className="mt-8 max-w-2xl mx-auto">
-          <label htmlFor="blog-search" className={`block text-sm font-semibold text-eerieBlack mb-2 ${lang === 'ar' ? 'text-right' : ''}`}>
+          <label
+            htmlFor="blog-search"
+            className={`block text-sm font-semibold text-eerieBlack mb-2 ${lang === 'ar' ? 'text-right' : ''}`}
+          >
             {t('blog.searchLabel')}
           </label>
           <div className="relative">
@@ -48,7 +58,7 @@ const Blog = () => {
               id="blog-search"
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(event) => setQuery(event.target.value)}
               placeholder={t('blog.searchPlaceholder')}
               className="w-full rounded-xl border border-white/20 bg-jetLight text-timberWolf placeholder:text-silver focus:outline-none focus:ring-2 focus:ring-french px-4 py-3 text-base shadow-sm"
             />
@@ -79,7 +89,13 @@ const Blog = () => {
 
                 <div className="p-6 flex flex-col flex-1">
                   <p className="text-[13px] text-taupe uppercase tracking-[0.2em]">
-                    <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                    <time dateTime={post.date}>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}
+                    </time>
                   </p>
 
                   <h2 className="mt-3 text-2xl font-semibold text-timberWolf leading-snug">
@@ -88,9 +104,7 @@ const Blog = () => {
                     </Link>
                   </h2>
 
-                  <p className="mt-3 text-silver text-[16px] leading-[28px]">
-                    {post.excerpt}
-                  </p>
+                  <p className="mt-3 text-silver text-[16px] leading-[28px]">{post.excerpt}</p>
 
                   <div className="mt-auto pt-4 text-sm text-taupe">
                     <Link to={`/blog/${post.slug}`} className="font-semibold text-french hover:underline">
